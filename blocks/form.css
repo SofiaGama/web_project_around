@@ -1,0 +1,57 @@
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  width: 430px;
+  height: 330px;
+  border-radius: 20px;
+}
+
+.form__card {
+  display: none;
+}
+
+.form__edit-div {
+  width: 100%;
+  height: 100%;
+}
+
+.form__edit-content-button-close {
+  background-image: url(../images/closeicon.svg);
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  background-color: transparent;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.form__edit-title {
+}
+
+.form__edit-pro {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form__input {
+}
+
+.form__input-type-text {
+}
+
+.form__submit-button {
+}
+
+@media (max-width: 768px) {
+  .form {
+    width: 288px;
+    height: 322px;
+  }
+
+  .form__edit-content-button-close {
+  }
+}
