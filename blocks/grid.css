@@ -1,0 +1,29 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  max-width: 880px;
+  width: 100%;
+  margin: auto;
+  row-gap: 17px;
+  column-gap: 21px;
+  margin-top: 50px;
+}
+
+.grid__card {
+  max-width: 282px;
+  max-height: 361px;
+  border-radius: 10px;
+}
+
+.grid__card-image {
+  max-width: 282px;
+  max-height: 282px;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.grid__card-content {
+}
+
+.grid__card-legend {
+}

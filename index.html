@@ -1,9 +1,173 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta name="description" content="aroundtheworld" />
+    <meta name="keywords" content="html, css, js" />
+    <meta name="author" content="Sofia Gama" />
+    <link rel="stylesheet" href="./pages/index.css" />
+    <title>Around the World</title>
   </head>
-  <body></body>
+  <body>
+    <div class="page page-opacity">
+      <header class="header">
+        <img src="./logoheader.svg" alt="logo around" class="header__logo" />
+        <img
+          src="./lineheader.svg"
+          alt="linha cabeçalho"
+          class="header__line"
+        />
+      </header>
+      <main>
+        <section class="profile">
+          <div class="profile__content">
+            <img
+              src="./images/profileavatar.jpg"
+              alt="foto de perfil do usuário"
+              class="profile__avatar"
+            />
+            <div class="profile__middle">
+              <h1 class="profile__name" id="pro">Jacques Cousteau</h1>
+              <button type="button" class="profile__button-form"></button>
+              <p class="profile__text" id="protext">Explorador</p>
+            </div>
+          </div>
+          <button type="button" class="profile__button-fill">
+            <img
+              src="./images/vector.svg"
+              alt="vetor form"
+              class="profile__button-fill-vector"
+            />
+          </button>
+        </section>
+        <section class="grid">
+          <div class="grid__card">
+            <img
+              src="./images/Alicante-Spain-unsplash.jpeg"
+              alt="Alicante Espanha"
+              class="grid__card-image"
+            />
+            <div class="grid__card-content">
+              <p class="grid__card-legend">Alicante, Spain</p>
+              <button
+                type="button"
+                class="grid__card-button-like grid__card-button-like-active"
+              ></button>
+            </div>
+          </div>
+          <div class="grid__card">
+            <img
+              src="./images/BatemansBay-Australia-unsplash.jpeg"
+              alt="Batemans Bay Australia"
+              class="grid__card-image"
+            />
+            <div class="grid__card-content">
+              <p class="grid__card-legend">Batemans Bay, Australia</p>
+              <button
+                type="button"
+                class="grid__card-button-like grid__card-button-like-active"
+              ></button>
+            </div>
+          </div>
+          <div class="grid__card">
+            <img
+              src="./images/estadolivre-africadosul-unsplash.jpeg"
+              alt="Estado Livre Africa do Sul"
+              class="grid__card-image"
+            />
+            <div class="grid__card-content">
+              <p class="grid__card-legend">Free State, South Africa</p>
+              <button
+                type="button"
+                class="grid__card-button-like grid__card-button-like-active"
+              ></button>
+            </div>
+          </div>
+          <div class="grid__card">
+            <img
+              src="./images/Finalborgo-Italy-unsplash.jpeg"
+              alt="Finalborgo Itália"
+              class="grid__card-image"
+            />
+            <div class="grid__card-content">
+              <p class="grid__card-legend">Finalborgo, Itália</p>
+              <button
+                type="button"
+                class="grid__card-button-like grid__card-button-like-active"
+              ></button>
+            </div>
+          </div>
+          <div class="grid__card">
+            <img
+              src="./images/KhaoSokNationalPark-Thai-unsplash.jpeg"
+              alt="Surat Thani Thailand"
+              class="grid__card-image"
+            />
+            <div class="grid__card-content">
+              <p class="grid__card-legend">Surat Thani, Thailand</p>
+              <button
+                type="button"
+                class="grid__card-button-like grid__card-button-like-active"
+              ></button>
+            </div>
+          </div>
+          <div class="grid__card">
+            <img
+              src="./images/royspeak-newzeland-unsplash.jpeg"
+              alt="Royspeak Nova Zelandia"
+              class="grid__card-image"
+            />
+            <div class="grid__card-content">
+              <p class="grid__card-legend">Royspeak, New Zeland</p>
+              <button
+                type="button"
+                class="grid__card-button-like grid__card-button-like-active"
+              ></button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <p>&copy; 2024 Around The World</p>
+      </footer>
+    </div>
+    <section class="popup popup__empty">
+      <div class="popup__edit-div">
+        <button type="button" class="popup__edit-div-button-close"></button>
+        <h2 class="popup__edit-title">Editar Perfil</h2>
+        <form action="#" class="popup__edit-pro"></form>
+        <input
+          type="text"
+          name="nome"
+          class="popup__input popup__input-type-text"
+          id="name"
+          placeholder="Nome"
+          required
+        />
+        <input
+          type="text"
+          name="texto"
+          class="popup__input popup__input-type-text"
+          id="text"
+          placeholder="sobre mim"
+          required
+        />
+        <button type="submit" class="popup__submit-button">Salvar</button>
+      </form>
+      </div>
+    </section>
+    <section class="form form__card">
+      <div class="form__edit-div">
+        <button type="button" class="form__edit-content-button-close"></button>
+        <h2 class="form__edit-title">Nova publicação</h2>
+        <form action="#" class="form__edit-pro">
+          <input type="text" name="nome" class="form__input form__input-type-text" id="name" placeholder="legenda" required/>
+          <input type="text" name="autor" class="form__input form__input-type-text" id="text" placeholder="link image" required/>
+          <button type="submit" class="form__submit-button">Salvar</button>
+        </form>
+      </div>
+    </section>
+    <script src="./index.js"></script>
+  </body>
 </html>
