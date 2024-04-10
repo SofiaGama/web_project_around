@@ -1,0 +1,19 @@
+.header {
+  max-width: 880px;
+  max-height: 74px;
+  padding-top: 45px;
+  padding-left: 200px;
+}
+
+.header__logo {
+  max-width: 173px;
+  max-height: 33px;
+  padding-bottom: 41px;
+}
+
+.header__line {
+  max-width: 880px;
+  border: 1px;
+  color: #545454;
+  align-self: center;
+}

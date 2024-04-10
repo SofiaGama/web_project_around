@@ -1,0 +1,82 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  max-width: 880px;
+  width: 100%;
+  margin: auto;
+  row-gap: 40px;
+  column-gap: 21px;
+  margin-top: 50px;
+}
+
+.grid__card {
+  background-color: #fff;
+  max-width: 282px;
+  max-height: 361px;
+  border-radius: 10px;
+}
+
+.grid__card-image {
+  max-width: 282px;
+  max-height: 282px;
+  border-radius: 10px 10px 0px 0px;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.grid__card-content {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  align-items: center;
+  margin-top: 8px;
+  margin-bottom: 20px;
+  max-width: 282px;
+  height: 60px;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.grid__card-legend {
+  max-width: 246px;
+  font-family: inherit;
+  font-size: 24px;
+  line-height: 29.05px;
+  font-weight: 900;
+  text-align: left;
+  background-color: #fff;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  letter-spacing: 0em;
+  margin-left: 15px;
+}
+
+.grid__card-button-like {
+  background-image: url(../images/likevector.svg);
+  width: 21px;
+  height: 19px;
+  background-size: cover;
+  background-color: #fff;
+  cursor: pointer;
+  padding-right: 15px;
+  margin-right: 8px;
+  border: none;
+}
+
+.grid__card-button-like-active {
+  background-image: url(../images/likevector.svg);
+  width: 21px;
+  height: 19px;
+  background-size: cover;
+  background-color: #fff;
+  cursor: pointer;
+  padding-right: 15px;
+  margin-right: 8px;
+  border: none;
+}
+
+.grid__card-button-like:hover {
+  opacity: 0.5;
+}
