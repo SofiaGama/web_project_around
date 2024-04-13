@@ -1,64 +1,46 @@
-let popupClose = document.querySelector(".popup");
 let openPage = document.querySelector(".page");
-let closeBtn = document.querySelector(".form");
-let openForm = document.querySelector(".profile__button-form");
-let closePg = document.querySelector(".popup__edit-div-button-close");
-let closeButton = document.querySelector(".form__edit-content-button-close");
-let submitPopup = document.querySelector(".popup__edit-pro-save");
-let openB = document.querySelector("profile__button-fill");
+let submiTform = document.querySelector(".popup__submit-button");
+let openBut = document.querySelector(".profile__button-fill");
+let openP = document.querySelector(".profile__button-form");
+let closeP = document.querySelector(".popup__edit-div-button-close");
+let closeBut = document.querySelector(".form__edit-content-button-close");
+let formClose = document.querySelector(".popup");
+let closeB = document.querySelector(".form");
+let buttonForm = document.querySelector(".form__submit-button");
+
+function openForm() {
+  formClose.style.display = "block";
+  openPage.style.opacity = "0.4";
+  openBut.disabled = true;
+}
+
+function openImg() {
+  closeB.style.display = "block";
+  openPage.style.opacity = "0.4";
+}
+function closeImg() {
+  closeB.style.display = "none";
+  openPage.style.opacity = "1";
+}
+
+function closeForm() {
+  formClose.style.display = "none";
+  openBut.disabled = false;
+}
 
 function closePage() {
   openPage.style.opacity = "1";
 }
 
-function openPopup() {
-  openB.disabled = true;
-  popupClose.computedStyleMap.display = "block";
-  openPage.computedStyleMap.opacity = "0.5";
-}
+openBut.addEventListener("click", openImg);
+closeBut.addEventListener("click", closeImg);
+submiTform.addEventListener("click", closePage);
+buttonForm.addEventListener("click", closeImg);
+openP.addEventListener("click", openForm);
+closeP.addEventListener("click", closeForm);
+closeP.addEventListener("click", closePage);
 
-function closePopup() {
-  openB = disabled = false;
-  popupClose.style.display = "none";
-}
-
-function photoOpen() {
-  closeBtn.style.display = "block";
-  openPage.style.opacity = "0.5";
-}
-
-function photoClose() {
-  closeBtn.style.display = "none";
-}
-
-openB.addEventListener("click", photoOpen);
-closeButton.addEventListener("click", photoClose);
-closeButton.addEventListener("click", closePage);
-closePg.addEventListener("click", closePage);
-openForm.addEventListener("click", openPopup);
-closePg.addEventListener("click", closePopup);
-
-let popupfill = document.querySelector(".popup__edit-pro");
-
-function handleProfileFormSubmit(evt) {
-  evt.preventDefault();
-
-  const inputName = document.querySelector(".popup__input-type-name");
-  const inputText = document.querySelector(".popup__input-type-text");
-  const popupEmpty = document.querySelector(".popup__empty");
-  let name = inputName.value;
-  let text = inputText.value;
-  let printName = document.querySelector("#pro");
-  let printText = document.querySelector("#protext");
-  openForm.disabled = false;
-  printName.textContent = name;
-  printText.textContent = text;
-  popupEmpty.style.display = "none";
-}
-
-popupfill.addEventListener("submit", handleProfileFormSubmit);
-
-const buttons = document.querySelectorAll(".grid__card-button-like");
+const buttons = document.querySelectorAll(".local__img-btn-heart");
 
 buttons.forEach(function (button) {
   button.addEventListener("click", function () {
@@ -71,3 +53,26 @@ buttons.forEach(function (button) {
     }
   });
 });
+
+let formElment = document.querySelector(".popup__edit-pro");
+
+function handleProfileFormSubmit(evt) {
+  evt.preventDefault();
+
+  let nameInput = document.querySelector("#name");
+  let jobInput = document.querySelector("#text");
+  let formClean = document.querySelector(".popup__empty");
+
+  let name = nameInput.value;
+  let job = jobInput.value;
+
+  let nameDisplay = document.querySelector("#pro");
+  let jobDisplay = document.querySelector("#protext");
+
+  nameDisplay.textContent = name;
+  jobDisplay.textContent = job;
+  formClean.style.display = "none";
+  openBut.disabled = false;
+}
+
+formElment.addEventListener("submit", handleProfileFormSubmit);

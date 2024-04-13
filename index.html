@@ -12,12 +12,9 @@
   <body>
     <div class="page page-opacity">
       <header class="header">
-        <img src="./logoheader.svg" alt="logo around" class="header__logo" />
-        <img
-          src="./lineheader.svg"
-          alt="linha cabeçalho"
-          class="header__line"
-        />
+        <img src="" 
+              alt="logo around"  
+              class="header__logo" />
       </header>
       <main>
         <section class="profile">
@@ -41,15 +38,16 @@
             />
           </button>
         </section>
-        <section class="grid">
+        <section class="grid" id="grids">
           <div class="grid__card">
             <img
               src="./images/Alicante-Spain-unsplash.jpeg"
               alt="Alicante Espanha"
               class="grid__card-image"
+              id="photo"
             />
             <div class="grid__card-content">
-              <p class="grid__card-legend">Alicante, Spain</p>
+              <p id="legend" class="grid__card-legend">Alicante, Spain</p>
               <button
                 type="button"
                 class="grid__card-button-like grid__card-button-like-active"
@@ -61,9 +59,10 @@
               src="./images/BatemansBay-Australia-unsplash.jpeg"
               alt="Batemans Bay Australia"
               class="grid__card-image"
+              id="photo"
             />
             <div class="grid__card-content">
-              <p class="grid__card-legend">Batemans Bay, Australia</p>
+              <p id="legend" class="grid__card-legend">Batemans Bay, Australia</p>
               <button
                 type="button"
                 class="grid__card-button-like grid__card-button-like-active"
@@ -75,9 +74,10 @@
               src="./images/estadolivre-africadosul-unsplash.jpeg"
               alt="Estado Livre Africa do Sul"
               class="grid__card-image"
+              id="photo"
             />
             <div class="grid__card-content">
-              <p class="grid__card-legend">Free State, South Africa</p>
+              <p id="legend" class="grid__card-legend">Free State, South Africa</p>
               <button
                 type="button"
                 class="grid__card-button-like grid__card-button-like-active"
@@ -89,9 +89,10 @@
               src="./images/Finalborgo-Italy-unsplash.jpeg"
               alt="Finalborgo Itália"
               class="grid__card-image"
+              id="photo"
             />
             <div class="grid__card-content">
-              <p class="grid__card-legend">Finalborgo, Itália</p>
+              <p id="legend" class="grid__card-legend">Finalborgo, Itália</p>
               <button
                 type="button"
                 class="grid__card-button-like grid__card-button-like-active"
@@ -103,9 +104,10 @@
               src="./images/KhaoSokNationalPark-Thai-unsplash.jpeg"
               alt="Surat Thani Thailand"
               class="grid__card-image"
+              id="photo"
             />
             <div class="grid__card-content">
-              <p class="grid__card-legend">Surat Thani, Thailand</p>
+              <p id="legend" class="grid__card-legend">Surat Thani, Thailand</p>
               <button
                 type="button"
                 class="grid__card-button-like grid__card-button-like-active"
@@ -117,9 +119,10 @@
               src="./images/royspeak-newzeland-unsplash.jpeg"
               alt="Royspeak Nova Zelandia"
               class="grid__card-image"
+              id="photo"
             />
             <div class="grid__card-content">
-              <p class="grid__card-legend">Royspeak, New Zeland</p>
+              <p id="legend" class="grid__card-legend">Royspeak, New Zeland</p>
               <button
                 type="button"
                 class="grid__card-button-like grid__card-button-like-active"
@@ -150,10 +153,10 @@
           name="texto"
           class="popup__input popup__input-type-text"
           id="text"
-          placeholder="sobre mim"
+          placeholder="Sobre mim"
           required
         />
-        <button type="submit" class="popup__submit-button">Salvar</button>
+        <button type="submit" class="popup__submit-button"></button>
       </form>
       </div>
     </section>
@@ -162,9 +165,9 @@
         <button type="button" class="form__edit-content-button-close"></button>
         <h2 class="form__edit-title">Nova publicação</h2>
         <form action="#" class="form__edit-pro">
-          <input type="text" name="nome" class="form__input form__input-type-name" id="name" placeholder="legenda" required/>
-          <input type="text" name="autor" class="form__input form__input-type-author" id="text" placeholder="link image" required/>
-          <button type="submit" class="form__submit-button">Salvar</button>
+          <input type="text" name="nome" class="form__input form__input-type-name" id="name" placeholder="Legenda" required/>
+          <input type="text" name="autor" class="form__input form__input-type-author" id="text" placeholder="Link imagem" required/>
+          <button type="submit" class="form__submit-button"></button>
         </form>
       </div>
     </section>

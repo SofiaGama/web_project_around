@@ -2,10 +2,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 500px;
+  width: 100%;
+  max-height: 400px;
+  height: 100%;
+  border-radius: 15px;
   background-color: #fff;
-  width: 430px;
-  height: 330px;
-  border-radius: 20px;
+  position: absolute;
+  top: 195px;
+  left: 700px;
 }
 
 .form__card {
@@ -19,15 +24,31 @@
 
 .form__edit-content-button-close {
   background-image: url(../images/closeicon.svg);
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   color: #fff;
   background-color: transparent;
   background-size: cover;
   background-repeat: no-repeat;
+  border: none;
+  left: 500px;
+  top: -45px;
+  position: absolute;
 }
 
 .form__edit-title {
+  display: flex;
+  position: absolute;
+  background-color: #fff;
+  font-family: inherit;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 22px;
+  width: 330px;
+  height: 23px;
+  text-align: left;
+  left: 50px;
+  top: 50px;
 }
 
 .form__edit-pro {
@@ -38,20 +59,93 @@
 }
 
 .form__input {
+  margin-top: 45px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
 }
 
-.form__input-type-text {
+.form__input-type-name {
+  max-width: 358px;
+  width: 100%;
+  height: 35px;
+  margin: 20px 36px 0px;
+  border: none;
+  top: 120px;
+  left: 35px;
+}
+
+.form__input-type-name::placeholder {
+  text-align: left;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 25px;
+  border-bottom: 2px solid #000;
+}
+.form__input-type-author {
+  max-width: 358px;
+  width: 100%;
+  height: 35px;
+  margin: 20px 36px 0px;
+  border: none;
+  top: 180px;
+  left: 35px;
+}
+
+.form__input-type-author::placeholder {
+  text-align: left;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 25px;
+  border-bottom: 2px solid #000;
 }
 
 .form__submit-button {
+  background-image: url("../images/Submit\ Button.svg");
+  border: none;
+  color: #fff;
+  font-family: inherit;
+  border-radius: 2px;
+  max-width: 358px;
+  width: 100%;
+  max-height: 50.15px;
+  height: 100%;
+  top: 300px;
+  left: 70px;
+  display: flex;
+  position: absolute;
 }
 
 @media (max-width: 768px) {
   .form {
-    width: 288px;
-    height: 322px;
+    position: absolute;
+    width: 500px;
+    height: 400px;
+    left: 140px;
+    top: 230px;
+  }
+
+  .form__edit-div {
+    width: 100%;
+    height: 100%;
   }
 
   .form__edit-content-button-close {
+    width: 26px;
+    height: 26px;
+    background-image: url("../images/closeicon.svg");
+    background-color: transparent;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    margin-top: -30px;
+    margin-left: -20px;
+    color: #fff;
   }
 }
