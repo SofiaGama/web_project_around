@@ -10,7 +10,7 @@
   background-color: #fff;
   position: absolute;
   top: 195px;
-  left: 700px;
+  left: 465px;
 }
 
 .popup__empty {
@@ -128,6 +128,12 @@
   position: absolute;
 }
 
+@media (max-width: 1060px) {
+  .popup {
+    left: 280px;
+  }
+}
+
 @media (max-width: 768px) {
   .popup {
     position: absolute;
@@ -154,6 +160,120 @@
     position: absolute;
     margin-top: -30px;
     margin-left: -20px;
+    color: #fff;
+  }
+}
+
+@media (max-width: 425px) {
+  .popup {
+    width: 370px;
+    height: 330px;
+    left: 28px;
+    top: 95px;
+  }
+
+  .popup__input-type-name {
+    left: 30px;
+    margin: 0px;
+    width: 300px;
+  }
+
+  .popup__input-type-text {
+    left: 30px;
+    margin: 0px;
+    width: 300px;
+  }
+
+  .popup__submit-button {
+    background-image: url("../images/Submit\ Button320px.svg");
+    border: none;
+    color: #ffffff;
+    font-family: inherit;
+    border-radius: 3px;
+    display: flex;
+    position: absolute;
+    top: 250px;
+    left: 60px;
+    margin: 0px;
+    width: 250px;
+  }
+
+  .popup__edit-title {
+    left: 30px;
+    margin: 0px;
+    width: 250px;
+    top: 38px;
+  }
+
+  .popup__edit-div-button-close {
+    width: 26px;
+    height: 26px;
+    background-image: url("../images/closeicon.svg");
+    background-color: transparent;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    margin-top: 12px;
+    margin-left: -180px;
+    color: #fff;
+  }
+}
+
+@media (max-width: 320px) {
+  .popup {
+    width: 290px;
+    height: 330px;
+    left: 15px;
+    top: 95px;
+  }
+
+  .popup__input-type-name {
+    left: 20px;
+    margin: 0px;
+    width: 250px;
+  }
+
+  .popup__input-type-text {
+    left: 20px;
+    margin: 0px;
+    width: 250px;
+  }
+
+  .popup__submit-button {
+    background-image: url("../images/Submit\ Button320px.svg");
+    border: none;
+    color: #ffffff;
+    font-family: inherit;
+    border-radius: 3px;
+    display: flex;
+    position: absolute;
+    top: 250px;
+    left: 20px;
+    margin: 0px;
+    width: 250px;
+  }
+
+  .popup__edit-title {
+    left: 20px;
+    margin: 0px;
+    width: 250px;
+    top: 40px;
+  }
+
+  .popup__edit-div-button-close {
+    width: 26px;
+    height: 26px;
+    background-image: url("../images/closeicon.svg");
+    background-color: transparent;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    margin-top: 12px;
+    margin-left: -250px;
     color: #fff;
   }
 }

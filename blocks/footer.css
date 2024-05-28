@@ -9,3 +9,24 @@
   padding-left: 190px;
   padding-bottom: 60px;
 }
+
+@media (max-width: 1060px) {
+  .footer {
+    padding-left: 0px;
+  }
+}
+
+@media (max-width: 425px) {
+  .footer {
+    padding-left: 65px;
+    padding-bottom: 15px;
+    padding-top: 80px;
+  }
+}
+
+@media (max-width: 320px) {
+  .footer {
+    padding-left: 22px;
+    padding-top: 230px;
+  }
+}

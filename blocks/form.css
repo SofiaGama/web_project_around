@@ -10,7 +10,7 @@
   background-color: #fff;
   position: absolute;
   top: 195px;
-  left: 700px;
+  left: 465px;
 }
 
 .form__card {
@@ -120,6 +120,12 @@
   position: absolute;
 }
 
+@media (max-width: 1060px) {
+  .form {
+    left: 280px;
+  }
+}
+
 @media (max-width: 768px) {
   .form {
     position: absolute;
@@ -146,6 +152,120 @@
     position: absolute;
     margin-top: -30px;
     margin-left: -20px;
+    color: #fff;
+  }
+}
+
+@media (max-width: 425px) {
+  .form {
+    width: 370px;
+    height: 330px;
+    left: 28px;
+    top: 95px;
+  }
+
+  .form__input-type-name {
+    left: 30px;
+    margin: 0px;
+    width: 300px;
+  }
+
+  .form__input-type-author {
+    left: 30px;
+    margin: 0px;
+    width: 300px;
+  }
+
+  .form__submit-button {
+    background-image: url("../images/Submit\ Button320px.svg");
+    border: none;
+    color: #fff;
+    font-family: inherit;
+    border-radius: 3px;
+    margin: 0px;
+    width: 250px;
+    top: 250px;
+    left: 60px;
+    display: flex;
+    position: absolute;
+  }
+
+  .form__edit-title {
+    left: 30px;
+    width: 250px;
+    margin: 0px;
+    top: 38px;
+  }
+
+  .form__edit-content-button-close {
+    width: 26px;
+    height: 26px;
+    background-image: url("../images/closeicon.svg");
+    background-color: transparent;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    margin-top: 12px;
+    margin-left: -180px;
+    color: #fff;
+  }
+}
+
+@media (max-width: 320px) {
+  .form {
+    width: 290px;
+    height: 330px;
+    left: 15px;
+    top: 95px;
+  }
+
+  .form__input-type-name {
+    left: 20px;
+    margin: 0px;
+    width: 250px;
+  }
+
+  .form__input-type-author {
+    left: 20px;
+    margin: 0px;
+    width: 250px;
+  }
+
+  .form__submit-button {
+    background-image: url("../images/Submit\ Button320px.svg");
+    border: none;
+    color: #fff;
+    font-family: inherit;
+    border-radius: 3px;
+    margin: 0px;
+    width: 250px;
+    top: 250px;
+    left: 20px;
+    display: flex;
+    position: absolute;
+  }
+
+  .form__edit-title {
+    left: 20px;
+    width: 250px;
+    margin: 0px;
+    top: 40px;
+  }
+
+  .form__edit-content-button-close {
+    width: 26px;
+    height: 26px;
+    background-image: url("../images/closeicon.svg");
+    background-color: transparent;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    margin-top: 12px;
+    margin-left: -250px;
     color: #fff;
   }
 }

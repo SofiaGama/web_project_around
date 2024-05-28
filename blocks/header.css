@@ -1,18 +1,19 @@
 .header {
   max-width: 880px;
-  max-height: 74px;
-  padding-top: 119px;
+  height: 74px;
   margin-left: 200px;
   border-bottom: 1px solid #545454;
+  align-content: end;
 }
 
 .header__logo {
-  background-image: url("../logoheader.svg");
-  color: #fff;
-  max-width: 173px;
-  max-height: 33px;
-  padding-bottom: 41px;
+  padding-bottom: 20px;
 }
+
+@media screen and (max-width: 1060px) {
+  .header {
+    margin-left: 0px;
+  }
 
 @media (max-width: 800px) {
   .header {

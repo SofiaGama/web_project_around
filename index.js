@@ -1,50 +1,46 @@
-const popup = document.querySelector(".popup");
-const abrirPopup = document.querySelector(".profile__button-fill");
-const editarPerfil = document.querySelector(".popup__edit-pro");
-const botaoFecharPerfil = document.querySelector(
-  ".popup__edit-div-button-close"
-);
-const pagina = document.querySelector(".page");
+function handleProfileFormSubmit(evt) {
+  //evt.preventDefault();
 
-function abrirEditarPopup() {
-  popup.classList.add("popup_visible");
-  pagina.classList.remove("page");
+  let nameInput, jobInput, proName, proText;
+
+  nameInput = document.getElementById("name");
+  jobInput = document.getElementById("text");
+
+  proName = document.getElementById("proname");
+  proText = document.getElementById("protext");
+
+  proName.innerHTML = nameInput.value;
+  proText.innerHTML = jobInput.value;
+
+  closePopup("pp");
 }
 
-function fecharEditarPopup() {
-  editarPopup.classList.remove("popup_visible");
+function openPopup(popupElement) {
+  let formElement = document.getElementById(popupElement);
+  document.getElementById("pagina").classList.add("page-visible");
+
+  formElement.style.display = "flex";
 }
 
-function handleSubmitProfileForm(event) {
-  event.preventDefault();
-  const nome = editarPerfil.querySelector(".popup__input-type-name").value;
-  const about = editarPerfil.querySelector(".popup__input-type-text").value;
-  closeEditarPopup();
+function closePopup(popupElement) {
+  let formElement = document.getElementById(popupElement);
+  document.getElementById("pagina").classList.remove("page-visible");
+
+  nameInput = document.getElementById("name");
+  jobInput = document.getElementById("text");
+
+  nameInput.value = "";
+  jobInput.value = "";
+
+  formElement.style.display = "";
 }
 
-abrirPopup.addEventListener("click", abrirEditarPopup);
-botaoFecharPerfil.addEventListener("click", fecharEditarPopup);
-
-const form = document.querySelector(".form");
-const novaPostagemForm = document.querySelector(".form");
-const editarForm = document.querySelector(".form__edit-pro");
-const botaoFecharNovaPostagem = document.querySelector(
-  ".form__edit-content-button-close"
-);
-
-function abrirNovaPostagemForm() {
-  editarForm.classList.add("popup_visible");
+function curtir(btn) {
+  if (btn.classList.contains("grid__card-button-like")) {
+    btn.classList.add("grid__card-button-like-active");
+    btn.classList.remove("grid__card-button-like");
+  } else {
+    btn.classList.add("grid__card-button-like");
+    btn.classList.remove("grid__card-button-like-active");
+  }
 }
-
-function fecharNovaPostagemForm() {
-  editarForm.classList.remove("popup_visible");
-}
-
-function handleSubmitProfileForm(event) {
-  event.preventDefault();
-  const novaPostagem = editarForm.querySelector(".form__input-type-name").value;
-  const novaImagem = editarForm.querySelector(".form__input-type-author").value;
-}
-
-novaPostagemForm.addEventListener("submit", handleSubmitProfileForm);
-botaoFecharNovaPostagem.addEventListener("click", fecharNovaPostagemForm);

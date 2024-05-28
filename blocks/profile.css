@@ -93,6 +93,12 @@
   opacity: 0.6;
 }
 
+@media (max-width: 1060px) {
+  .profile {
+    margin-left: 0px;
+  }
+}
+
 @media (max-width: 1045px) {
   .profile {
     display: flex;

@@ -66,9 +66,9 @@
 }
 
 .grid__card-button-like-active {
-  background-image: url(../images/likevector.svg);
+  background-image: url(../images/like.svg);
   width: 21px;
-  height: 19px;
+  height: 21px;
   background-size: cover;
   background-color: #fff;
   cursor: pointer;
@@ -100,7 +100,7 @@
     grid-template-columns: repeat(1, 1fr);
     margin: auto;
     margin-top: 50px;
-    margin-left: 35px;
+    margin-left: 42px;
     justify-content: center;
   }
 
@@ -109,5 +109,11 @@
     width: 100%;
     max-height: 282px;
     height: 100%;
+  }
+}
+
+@media (max-width: 320px) {
+  .grid {
+    margin-left: 19px;
   }
 }
