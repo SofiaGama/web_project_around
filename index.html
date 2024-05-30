@@ -12,9 +12,11 @@
   <body>
     <div id="pagina" class="page">
       <header class="header">
-        <img src="./images/VectorAround.svg" 
-              alt="logo around"  
-              class="header__logo" />
+        <img
+          src="./images/VectorAround.svg"
+          alt="logo around"
+          class="header__logo"
+        />
       </header>
       <main>
         <section class="profile">
@@ -26,11 +28,20 @@
             />
             <div class="profile__middle">
               <h1 class="profile__name" id="proname">Jacques Cousteau</h1>
-              <button type="button" class="profile__button-form" id="profile" onclick="openPopup('pp')"></button>
+              <button
+                type="button"
+                class="profile__button-form"
+                id="profile"
+                onclick="openPopup('pp')"
+              ></button>
               <p class="profile__text" id="protext">Explorador</p>
             </div>
           </div>
-          <button type="button" class="profile__button-fill" onclick="openPopup('card')">
+          <button
+            type="button"
+            class="profile__button-fill"
+            onclick="openPopup('card')"
+          >
             <img
               src="./images/vector.svg"
               alt="vetor form"
@@ -44,10 +55,9 @@
               src="./images/Alicante-Spain-unsplash.jpeg"
               alt="Alicante Espanha"
               class="grid__card-image"
-              id="photo"
             />
             <div class="grid__card-content">
-              <p id="legend" class="grid__card-legend">Alicante, Spain</p>
+              <p class="grid__card-legend">Alicante, Spain</p>
               <button
                 type="button"
                 class="grid__card-button-like"
@@ -60,10 +70,9 @@
               src="./images/BatemansBay-Australia-unsplash.jpeg"
               alt="Batemans Bay Australia"
               class="grid__card-image"
-              id="photo"
             />
             <div class="grid__card-content">
-              <p id="legend" class="grid__card-legend">Batemans Bay, Australia</p>
+              <p class="grid__card-legend">Batemans Bay, Australia</p>
               <button
                 type="button"
                 class="grid__card-button-like"
@@ -73,13 +82,12 @@
           </div>
           <div class="grid__card">
             <img
-              src="./images/sergey-pesterev-9-5-WYEBDz0-unsplash (1).jpg"
+              src="./images/sergey-pesterev-9-5-WYEBDz0-unsplash.jpg"
               alt="Tamnougalt, Morocco"
               class="grid__card-image"
-              id="photo"
             />
             <div class="grid__card-content">
-              <p id="legend" class="grid__card-legend">Tamnougalt, Morocco</p>
+              <p class="grid__card-legend">Tamnougalt, Morocco</p>
               <button
                 type="button"
                 class="grid__card-button-like"
@@ -92,10 +100,9 @@
               src="./images/Manarola-Italy.jpg"
               alt="Manarola Itália"
               class="grid__card-image"
-              id="photo"
             />
             <div class="grid__card-content">
-              <p id="legend" class="grid__card-legend">Manarola, Itália</p>
+              <p class="grid__card-legend">Manarola, Itália</p>
               <button
                 type="button"
                 class="grid__card-button-like"
@@ -108,10 +115,9 @@
               src="./images/KhaoSokNationalPark-Thai-unsplash.jpg"
               alt="Khlong Sok"
               class="grid__card-image"
-              id="photo"
             />
             <div class="grid__card-content">
-              <p id="legend" class="grid__card-legend">Khlong Sok, Thailand</p>
+              <p class="grid__card-legend">Khlong Sok, Thailand</p>
               <button
                 type="button"
                 class="grid__card-button-like"
@@ -124,10 +130,9 @@
               src="./images/royspeak-newzeland-unsplash.jpeg"
               alt="Royspeak Nova Zelandia"
               class="grid__card-image"
-              id="photo"
             />
             <div class="grid__card-content">
-              <p id="legend" class="grid__card-legend">Royspeak, New Zeland</p>
+              <p class="grid__card-legend">Royspeak, New Zeland</p>
               <button
                 type="button"
                 class="grid__card-button-like"
@@ -143,36 +148,62 @@
     </div>
     <section id="pp" class="popup popup__empty">
       <div class="popup__edit-div">
-        <button type="button" class="popup__edit-div-button-close" onclick="closePopup('pp')"></button>
+        <button
+          type="button"
+          class="popup__edit-div-button-close"
+          onclick="closePopup('pp')"
+        ></button>
         <h2 class="popup__edit-title">Editar Perfil</h2>
-        <form class="popup__edit-pro"></form>
-        <input
-          type="text"
-          name="nome"
-          class="popup__input popup__input-type-name"
-          id="name"
-          placeholder="Nome"
-          required
-        />
-        <input
-          type="text"
-          name="texto"
-          class="popup__input popup__input-type-text"
-          id="text"
-          placeholder="Sobre mim"
-          required
-        />
-        <button type="submit" class="popup__submit-button" onclick="handleProfileFormSubmit()"></button>
-      </form>
+        <form class="popup__edit-pro">
+          <input
+            type="text"
+            name="nome"
+            class="popup__input popup__input-type-name"
+            id="name"
+            placeholder="Nome"
+            required
+          />
+          <input
+            type="text"
+            name="texto"
+            class="popup__input popup__input-type-text"
+            id="text"
+            placeholder="Sobre mim"
+            required
+          />
+          <button
+            type="submit"
+            class="popup__submit-button"
+            onclick="handleProfileFormSubmit()"
+          ></button>
+        </form>
       </div>
     </section>
     <section id="card" class="form form__card">
       <div class="form__edit-div">
-        <button type="button" class="form__edit-content-button-close" onclick="closePopup('card')"></button>
+        <button
+          type="button"
+          class="form__edit-content-button-close"
+          onclick="closePopup('card')"
+        ></button>
         <h2 class="form__edit-title">Nova publicação</h2>
         <form class="form__edit-pro">
-          <input type="text" name="nome" class="form__input form__input-type-name" id="name" placeholder="Legenda" required/>
-          <input type="text" name="autor" class="form__input form__input-type-author" id="text" placeholder="Link imagem" required/>
+          <input
+            type="text"
+            name="nome"
+            class="form__input form__input-type-name"
+            id="namec"
+            placeholder="Legenda"
+            required
+          />
+          <input
+            type="text"
+            name="autor"
+            class="form__input form__input-type-author"
+            id="textc"
+            placeholder="Link imagem"
+            required
+          />
           <button type="submit" class="form__submit-button"></button>
         </form>
       </div>
