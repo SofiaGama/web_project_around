@@ -2,8 +2,15 @@
   font-family: "Inter", Arial, Helvetica, sans-serif;
   margin: 0;
   box-sizing: border-box;
+  background-color: black;
 }
 
 .body {
   background-color: black;
+}
+
+@media (max-width: 375px) {
+  .body {
+    margin-left: 25px;
+  }
 }
