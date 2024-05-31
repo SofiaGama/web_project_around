@@ -1,5 +1,5 @@
 function handleProfileFormSubmit(evt) {
-  //evt.preventDefault();
+  evt.preventDefault();
 
   let nameInput, jobInput, proName, proText;
 
