@@ -1,6 +1,4 @@
 function handleProfileFormSubmit(evt) {
-  //evt.preventDefault();
-
   let nameInput, jobInput, proName, proText;
 
   nameInput = document.getElementById("name");
@@ -13,6 +11,8 @@ function handleProfileFormSubmit(evt) {
   proText.innerHTML = jobInput.value;
 
   closePopup("pp");
+
+  evt.preventDefault();
 }
 
 function openPopup(popupElement) {
