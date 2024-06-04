@@ -1,4 +1,8 @@
+let formElement = document.querySelector("#ppep");
+
 function handleProfileFormSubmit(evt) {
+  evt.preventDefault();
+
   let nameInput, jobInput, proName, proText;
 
   nameInput = document.getElementById("name");
@@ -11,9 +15,9 @@ function handleProfileFormSubmit(evt) {
   proText.innerHTML = jobInput.value;
 
   closePopup("pp");
-
-  evt.preventDefault();
 }
+
+formElement.addEventListener("submit", handleProfileFormSubmit);
 
 function openPopup(popupElement) {
   let formElement = document.getElementById(popupElement);
