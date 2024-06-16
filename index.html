@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./pages/index.css" />
     <title>Around the World</title>
   </head>
-  <body class="body">
+  <body class="body" onload="loadForm(this)">
     <div id="pagina" class="page">
       <header class="header">
         <img
@@ -49,8 +49,14 @@
             />
           </button>
         </section>
-        <section class="grid">
-          <div class="grid__card">
+
+        <section class="grid" id="sectionCards">
+          <!-- <div class="grid__card">
+            <button
+              type="button"
+              class="grid__card-button-trash"
+              onclick="remove(this)"
+            ></button>
             <img
               src="./images/Alicante-Spain-unsplash.jpeg"
               alt="Alicante Espanha"
@@ -66,6 +72,11 @@
             </div>
           </div>
           <div class="grid__card">
+            <button
+              type="button"
+              class="grid__card-button-trash"
+              onclick="remove(this)"
+            ></button>
             <img
               src="./images/BatemansBay-Australia-unsplash.jpeg"
               alt="Batemans Bay Australia"
@@ -81,6 +92,11 @@
             </div>
           </div>
           <div class="grid__card">
+            <button
+              type="button"
+              class="grid__card-button-trash"
+              onclick="remove(this)"
+            ></button>
             <img
               src="./images/sergey-pesterev-9-5-WYEBDz0-unsplash.jpg"
               alt="Tamnougalt, Morocco"
@@ -96,6 +112,11 @@
             </div>
           </div>
           <div class="grid__card">
+            <button
+              type="button"
+              class="grid__card-button-trash"
+              onclick="remove(this)"
+            ></button>
             <img
               src="./images/Manarola-Italy.jpg"
               alt="Manarola Itália"
@@ -111,6 +132,11 @@
             </div>
           </div>
           <div class="grid__card">
+            <button
+              type="button"
+              class="grid__card-button-trash"
+              onclick="remove(this)"
+            ></button>
             <img
               src="./images/KhaoSokNationalPark-Thai-unsplash.jpg"
               alt="Khlong Sok"
@@ -126,6 +152,11 @@
             </div>
           </div>
           <div class="grid__card">
+            <button
+              type="button"
+              class="grid__card-button-trash"
+              onclick="remove(this)"
+            ></button>
             <img
               src="./images/royspeak-newzeland-unsplash.jpeg"
               alt="Royspeak Nova Zelandia"
@@ -139,8 +170,31 @@
                 onclick="curtir(this)"
               ></button>
             </div>
-          </div>
+          </div> -->
         </section>
+        <template id="div-cards">
+          <div class="grid__card">
+            <button
+              type="button"
+              class="grid__card-button-trash"
+              onclick="remove(this)"
+            ></button>
+            <img
+              src=""
+              alt=""
+              class="grid__card-image"
+              onclick="ViewImage(this)"
+            />
+            <div class="grid__card-content">
+              <p class="grid__card-legend"></p>
+              <button
+                type="button"
+                class="grid__card-button-like"
+                onclick="curtir(this)"
+              ></button>
+            </div>
+          </div>
+        </template>
       </main>
       <footer class="footer">
         <p>&copy; 2024 Around The World</p>
@@ -183,7 +237,7 @@
           onclick="closePopup('card')"
         ></button>
         <h2 class="form__edit-title">Nova publicação</h2>
-        <form class="form__edit-pro">
+        <form class="form__edit-pro" id="formnewpb">
           <input
             type="text"
             name="nome"
@@ -204,6 +258,15 @@
         </form>
       </div>
     </section>
+    <div class="view" id="imageview">
+      <button
+        type="button"
+        class="popup__edit-div-button-close"
+        onclick="closePopup('imageview')"
+      ></button>
+      <img src="" alt="" class="view__image" />
+      <h2 class="view__title"></h2>
+    </div>
     <script src="./index.js"></script>
   </body>
 </html>

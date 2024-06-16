@@ -1,0 +1,26 @@
+.view {
+  width: 50%;
+  height: 50%;
+  top: 25%;
+  left: 25%;
+  display: none;
+  position: fixed;
+}
+
+.view__image {
+  width: 100%;
+  height: 100%;
+}
+
+.view .popup__edit-div-button-close {
+  left: auto;
+  right: -6%;
+}
+
+.view__title {
+  color: white;
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14.52px;
+}

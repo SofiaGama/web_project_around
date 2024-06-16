@@ -81,6 +81,18 @@
   opacity: 0.5;
 }
 
+.grid__card-button-trash {
+  background-image: url(../images/Trash-active.svg);
+  width: 21px;
+  height: 21px;
+  background-color: transparent;
+  cursor: pointer;
+  background-size: cover;
+  position: absolute;
+  margin: 15px 0 0 242px;
+  border: none;
+}
+
 @media (max-width: 1046px) {
   .grid {
     display: grid;
