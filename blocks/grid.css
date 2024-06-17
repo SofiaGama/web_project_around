@@ -93,6 +93,11 @@
   border: none;
 }
 
+.grid__card-button-trash:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
 @media (max-width: 1046px) {
   .grid {
     display: grid;
