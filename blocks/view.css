@@ -12,9 +12,19 @@
   height: 100%;
 }
 
-.view .popup__edit-div-button-close {
+.view__button {
   left: auto;
   right: -6%;
+  background-image: url(../images/closeicon.svg);
+  width: 35px;
+  height: 35px;
+  color: #fff;
+  background-color: transparent;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: none;
+  top: -45px;
+  position: absolute;
 }
 
 .view__title {
