@@ -1,4 +1,4 @@
-let formElement = document.querySelector("#ppep");
+const formElement = document.querySelector("#ppep");
 const initialCards = [
   {
     name: "Vale de Yosemite",
@@ -55,7 +55,7 @@ function handleFormNewPbSubmit(evt) {
 }
 
 function closePopup(popupElement) {
-  let formElement = document.getElementById(popupElement);
+  const formElement = document.getElementById(popupElement);
   document.getElementById("pagina").classList.remove("page-visible");
 
   nameInput = document.getElementById("name");
@@ -85,14 +85,14 @@ function handleProfileFormSubmit(evt) {
 }
 
 function openPopup(popupElement) {
-  let formElement = document.getElementById(popupElement);
+  const formElement = document.getElementById(popupElement);
   document.getElementById("pagina").classList.add("page-visible");
 
   formElement.style.display = "flex";
 }
 
 function closePopup(popupElement) {
-  let formElement = document.getElementById(popupElement);
+  const formElement = document.getElementById(popupElement);
   document.getElementById("pagina").classList.remove("page-visible");
 
   nameInput = document.getElementById("name");
@@ -115,13 +115,13 @@ function curtir(btn) {
 }
 
 function remove(btn) {
-  let divParent = btn.closest("div .grid__card");
+  const divParent = btn.closest("div .grid__card");
   divParent.remove();
 }
 
 function cardCreate(card) {
   const template = document.querySelector("#div-cards").content;
-  let divCard = template.cloneNode(true);
+  const divCard = template.cloneNode(true);
   divCard.querySelector(".grid__card-image").src = card.link;
   divCard.querySelector(".grid__card-image").alt = card.name;
   divCard.querySelector(".grid__card-legend").innerHTML = card.name;
@@ -129,8 +129,8 @@ function cardCreate(card) {
 }
 
 function ViewImage(img) {
-  let image = img;
-  let imageviewdiv = document.getElementById("imageview");
+  const image = img;
+  const imageviewdiv = document.getElementById("imageview");
   document.getElementById("pagina").classList.add("page-visible");
   imageviewdiv.style.left =
     window.innerWidth / 2 - imageviewdiv.offsetWidth / 2;
