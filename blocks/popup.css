@@ -158,7 +158,7 @@
   visibility: hidden;
 }
 
-.popup__input--type-error-segundo {
+.popup__input--type-error-text {
   opacity: 1;
   color: red;
   width: 358px;
