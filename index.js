@@ -89,9 +89,38 @@ function openPopup(popupElement) {
   document.getElementById("pagina").classList.add("page-visible");
 
   formElement.style.display = "flex";
+
+  if (popupElement == "pp") {
+    let nameInput, jobInput, proName, proText;
+
+    nameInput = document.getElementById("name");
+    jobInput = document.getElementById("text");
+
+    proName = document.getElementById("proname");
+    proText = document.getElementById("protext");
+
+    nameInput.value = proName.innerHTML;
+    jobInput.value = proText.innerHTML;
+  }
+
+  if (popupElement == "card") {
+    let nameCInput, jobCInput;
+
+    nameCInput = document.getElementById("namec");
+    jobCInput = document.getElementById("textc");
+
+    nameCInput.value = "";
+    jobCInput.value = "";
+  }
+
+  // Adiciona um evento para detectar clique fora do popup
+  setTimeout(() => {
+    document.addEventListener("click", handleClickOutsidePopup);
+  }, 0);
 }
 
 function closePopup(popupElement) {
+  console.log("oi");
   const formElement = document.getElementById(popupElement);
   document.getElementById("pagina").classList.remove("page-visible");
 
@@ -102,6 +131,35 @@ function closePopup(popupElement) {
   jobInput.value = "";
 
   formElement.style.display = "";
+
+  //Remove o evento de clique fora do popup quando o popup é fechado
+  document.removeEventListener("click", handleClickOutsidePopup);
+}
+
+function handleClickOutsidePopup(event) {
+  const popups = ["pp", "card"];
+  popups.forEach((popupId) => {
+    const popup = document.getElementById(popupId);
+    if (popup.style.display === "flex" && !popup.contains(event.target)) {
+      closePopup(popupId);
+    }
+  });
+}
+
+/*
+function handleClickOutsideImage() {
+  document.getElementById("imageview");
+}*/
+
+function handleClickOutsideImageClose(event) {
+  const popup = document.getElementById("imageview");
+  if (popup.style.display === "block") {
+    console.log("ok");
+  } else if (!popup.contains(event.target)) {
+    console.log("yes");
+  } else {
+    closePopup("imageview");
+  }
 }
 
 function curtir(btn) {
@@ -139,4 +197,29 @@ function ViewImage(img) {
   imageviewdiv.style.display = "block";
   imageviewdiv.querySelector(".view__image").src = image.src;
   imageviewdiv.querySelector(".view__title").innerHTML = image.alt;
+
+  document.addEventListener("click", handleClickOutsideImageClose);
 }
+
+function closeImageView() {
+  console.log("fechar");
+  const imageviewdiv = document.getElementById("imageview");
+  document.getElementById("pagina").classList.remove("page-visible");
+  imageviewdiv.style.display = "none";
+
+  document.removeEventListener("click", handleClickOutsideImageClose);
+}
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    closePopup("pp");
+    closePopup("card");
+    closeImageView();
+  }
+});
+
+document.addEventListener("click", function (event) {
+  if (event === "click") {
+    closeImageView();
+  }
+});

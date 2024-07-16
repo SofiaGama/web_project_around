@@ -49,129 +49,7 @@
             />
           </button>
         </section>
-
-        <section class="grid" id="sectionCards">
-          <!-- <div class="grid__card">
-            <button
-              type="button"
-              class="grid__card-button-trash"
-              onclick="remove(this)"
-            ></button>
-            <img
-              src="./images/Alicante-Spain-unsplash.jpeg"
-              alt="Alicante Espanha"
-              class="grid__card-image"
-            />
-            <div class="grid__card-content">
-              <p class="grid__card-legend">Alicante, Spain</p>
-              <button
-                type="button"
-                class="grid__card-button-like"
-                onclick="curtir(this)"
-              ></button>
-            </div>
-          </div>
-          <div class="grid__card">
-            <button
-              type="button"
-              class="grid__card-button-trash"
-              onclick="remove(this)"
-            ></button>
-            <img
-              src="./images/BatemansBay-Australia-unsplash.jpeg"
-              alt="Batemans Bay Australia"
-              class="grid__card-image"
-            />
-            <div class="grid__card-content">
-              <p class="grid__card-legend">Batemans Bay, Australia</p>
-              <button
-                type="button"
-                class="grid__card-button-like"
-                onclick="curtir(this)"
-              ></button>
-            </div>
-          </div>
-          <div class="grid__card">
-            <button
-              type="button"
-              class="grid__card-button-trash"
-              onclick="remove(this)"
-            ></button>
-            <img
-              src="./images/sergey-pesterev-9-5-WYEBDz0-unsplash.jpg"
-              alt="Tamnougalt, Morocco"
-              class="grid__card-image"
-            />
-            <div class="grid__card-content">
-              <p class="grid__card-legend">Tamnougalt, Morocco</p>
-              <button
-                type="button"
-                class="grid__card-button-like"
-                onclick="curtir(this)"
-              ></button>
-            </div>
-          </div>
-          <div class="grid__card">
-            <button
-              type="button"
-              class="grid__card-button-trash"
-              onclick="remove(this)"
-            ></button>
-            <img
-              src="./images/Manarola-Italy.jpg"
-              alt="Manarola Itália"
-              class="grid__card-image"
-            />
-            <div class="grid__card-content">
-              <p class="grid__card-legend">Manarola, Itália</p>
-              <button
-                type="button"
-                class="grid__card-button-like"
-                onclick="curtir(this)"
-              ></button>
-            </div>
-          </div>
-          <div class="grid__card">
-            <button
-              type="button"
-              class="grid__card-button-trash"
-              onclick="remove(this)"
-            ></button>
-            <img
-              src="./images/KhaoSokNationalPark-Thai-unsplash.jpg"
-              alt="Khlong Sok"
-              class="grid__card-image"
-            />
-            <div class="grid__card-content">
-              <p class="grid__card-legend">Khlong Sok, Thailand</p>
-              <button
-                type="button"
-                class="grid__card-button-like"
-                onclick="curtir(this)"
-              ></button>
-            </div>
-          </div>
-          <div class="grid__card">
-            <button
-              type="button"
-              class="grid__card-button-trash"
-              onclick="remove(this)"
-            ></button>
-            <img
-              src="./images/royspeak-newzeland-unsplash.jpeg"
-              alt="Royspeak Nova Zelandia"
-              class="grid__card-image"
-            />
-            <div class="grid__card-content">
-              <p class="grid__card-legend">Royspeak, New Zeland</p>
-              <button
-                type="button"
-                class="grid__card-button-like"
-                onclick="curtir(this)"
-              ></button>
-            </div>
-          </div> -->
-        </section>
+        <section class="grid" id="sectionCards"></section>
         <template id="div-cards">
           <div class="grid__card">
             <button
@@ -208,23 +86,31 @@
           onclick="closePopup('pp')"
         ></button>
         <h2 class="popup__edit-title">Editar Perfil</h2>
-        <form id="ppep" class="popup__edit-pro">
+        <form name="formProfile" id="ppep" class="popup__edit-pro" novalidate>
           <input
             type="text"
             name="nome"
             class="popup__input popup__input-type-name"
             id="name"
             placeholder="Nome"
+            value="Jacques Cousteau"
+            minlength="2"
+            maxlength="40"
             required
           />
+          <span class="popup__input_type_error"></span>
           <input
             type="text"
             name="texto"
             class="popup__input popup__input-type-text"
             id="text"
             placeholder="Sobre mim"
+            value="Explorador"
             required
+            minlength="2"
+            max="200"
           />
+          <span class="popup__input_type_error-segundo"></span>
           <button type="submit" class="popup__submit-button"></button>
         </form>
       </div>
@@ -237,7 +123,7 @@
           onclick="closePopup('card')"
         ></button>
         <h2 class="form__edit-title">Nova publicação</h2>
-        <form class="form__edit-pro" id="formnewpb">
+        <form name="formCard" class="form__edit-pro" id="formnewpb" novalidate>
           <input
             type="text"
             name="nome"
@@ -245,16 +131,24 @@
             id="namec"
             placeholder="Legenda"
             required
+            minlength="2"
+            maxlength="30"
           />
+          <span class="form__input_type_error"></span>
           <input
-            type="text"
+            type="url"
             name="autor"
             class="form__input form__input-type-author"
             id="textc"
             placeholder="Link imagem"
             required
           />
-          <button type="submit" class="form__submit-button"></button>
+          <span class="form__input_type_error-segundo"></span>
+          <button
+            type="submit"
+            class="form__submit-button-inactive"
+            disabled
+          ></button>
         </form>
       </div>
     </section>
@@ -268,5 +162,6 @@
       <h2 class="view__title"></h2>
     </div>
     <script src="./index.js"></script>
+    <script src="./validate.js"></script>
   </body>
 </html>
