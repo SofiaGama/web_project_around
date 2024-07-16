@@ -137,7 +137,7 @@
   position: absolute;
 }
 
-.form__input_type_error {
+.form__input--type-error {
   opacity: 1;
   color: red;
   width: 358px;
@@ -151,7 +151,7 @@
   visibility: hidden;
 }
 
-.form__input_type_error-segundo {
+.form__input--type-error-segundo {
   opacity: 1;
   color: red;
   width: 358px;
