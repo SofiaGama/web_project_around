@@ -113,14 +113,12 @@ function openPopup(popupElement) {
     jobCInput.value = "";
   }
 
-  // Adiciona um evento para detectar clique fora do popup
   setTimeout(() => {
     document.addEventListener("click", handleClickOutsidePopup);
   }, 0);
 }
 
 function closePopup(popupElement) {
-  console.log("oi");
   const formElement = document.getElementById(popupElement);
   document.getElementById("pagina").classList.remove("page-visible");
 
@@ -132,7 +130,6 @@ function closePopup(popupElement) {
 
   formElement.style.display = "";
 
-  //Remove o evento de clique fora do popup quando o popup é fechado
   document.removeEventListener("click", handleClickOutsidePopup);
 }
 
@@ -146,19 +143,10 @@ function handleClickOutsidePopup(event) {
   });
 }
 
-/*
-function handleClickOutsideImage() {
-  document.getElementById("imageview");
-}*/
-
 function handleClickOutsideImageClose(event) {
   const popup = document.getElementById("imageview");
-  if (popup.style.display === "block") {
-    console.log("ok");
-  } else if (!popup.contains(event.target)) {
-    console.log("yes");
-  } else {
-    closePopup("imageview");
+  if (popup.style.display === "block" && !popup.contains(event.target)) {
+    closeImageView();
   }
 }
 
@@ -198,11 +186,12 @@ function ViewImage(img) {
   imageviewdiv.querySelector(".view__image").src = image.src;
   imageviewdiv.querySelector(".view__title").innerHTML = image.alt;
 
-  document.addEventListener("click", handleClickOutsideImageClose);
+  setTimeout(() => {
+    document.addEventListener("click", handleClickOutsideImageClose);
+  }, 0);
 }
 
 function closeImageView() {
-  console.log("fechar");
   const imageviewdiv = document.getElementById("imageview");
   document.getElementById("pagina").classList.remove("page-visible");
   imageviewdiv.style.display = "none";
@@ -214,12 +203,6 @@ document.addEventListener("keydown", function (event) {
   if (event.key === "Escape") {
     closePopup("pp");
     closePopup("card");
-    closeImageView();
-  }
-});
-
-document.addEventListener("click", function (event) {
-  if (event === "click") {
     closeImageView();
   }
 });
