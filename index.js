@@ -159,25 +159,21 @@ function cardCreate(card) {
   const template = document.querySelector("#div-cards").content;
   const divCard = template.cloneNode(true);
   const imageElement = divCard.querySelector(".grid__card-image");
-  console.log(imageElement);
-  console.log(divCard.children);
+  const btn = divCard.querySelector(".grid__card-button-trash");
+  const butn = divCard.querySelector(".grid__card-button-like");
   imageElement.src = card.link;
   imageElement.alt = card.name;
   divCard.querySelector(".grid__card-legend").innerHTML = card.name;
-  document.getElementById("sectionCards").prepend(divCard);
-  /*divCard
-    .querySelector(".grid__card-button-trash")
-    .addEventListener("click", function () {
-      remove();
-    });*/
+  btn.addEventListener("click", function () {
+    remove(btn);
+  });
   imageElement.addEventListener("click", function () {
     ViewImage(imageElement);
   });
-  divCard
-    .querySelector(".grid__card-button-like")
-    .addEventListener("click", function () {
-      curtir();
-    });
+  butn.addEventListener("click", function () {
+    curtir(butn);
+  });
+  document.getElementById("sectionCards").prepend(divCard);
 }
 
 function ViewImage(image) {
