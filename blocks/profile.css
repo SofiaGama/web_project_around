@@ -38,6 +38,7 @@
   letter-spacing: 0em;
   margin-top: 20px;
   margin-bottom: 0px;
+  overflow: hidden;
 }
 
 .profile__button-form {
@@ -70,6 +71,7 @@
   letter-spacing: 0em;
   padding-bottom: 20px;
   margin: 0px;
+  overflow: hidden;
 }
 
 .profile__button-fill {

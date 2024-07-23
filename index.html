@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./pages/index.css" />
     <title>Around the World</title>
   </head>
-  <body class="body" onload="loadForm(this)">
+  <body class="body">
     <div id="pagina" class="page">
       <header class="header">
         <img
@@ -32,16 +32,11 @@
                 type="button"
                 class="profile__button-form"
                 id="profile"
-                onclick="openPopup('pp')"
               ></button>
               <p class="profile__text" id="protext">Explorador</p>
             </div>
           </div>
-          <button
-            type="button"
-            class="profile__button-fill"
-            onclick="openPopup('card')"
-          >
+          <button type="button" class="profile__button-fill">
             <img
               src="./images/vector.svg"
               alt="vetor form"
@@ -52,24 +47,11 @@
         <section class="grid" id="sectionCards"></section>
         <template id="div-cards">
           <div class="grid__card">
-            <button
-              type="button"
-              class="grid__card-button-trash"
-              onclick="remove(this)"
-            ></button>
-            <img
-              src=" "
-              alt=""
-              class="grid__card-image"
-              onclick="ViewImage(this)"
-            />
+            <button type="button" class="grid__card-button-trash"></button>
+            <img src=" " alt="" class="grid__card-image" />
             <div class="grid__card-content">
               <p class="grid__card-legend"></p>
-              <button
-                type="button"
-                class="grid__card-button-like"
-                onclick="curtir(this)"
-              ></button>
+              <button type="button" class="grid__card-button-like"></button>
             </div>
           </div>
         </template>
@@ -80,11 +62,7 @@
     </div>
     <section id="pp" class="popup popup-empty">
       <div class="popup__edit-div">
-        <button
-          type="button"
-          class="popup__edit-div-button-close"
-          onclick="closePopup('pp')"
-        ></button>
+        <button type="button" class="popup__edit-div-button-close"></button>
         <h2 class="popup__edit-title">Editar Perfil</h2>
         <form name="formProfile" id="ppep" class="popup__edit-pro" novalidate>
           <input
@@ -108,7 +86,7 @@
             value="Explorador"
             required
             minlength="2"
-            max="200"
+            maxlength="200"
           />
           <span class="popup__input-type-error-text"></span>
           <button type="submit" class="popup__submit-button"></button>
@@ -117,11 +95,7 @@
     </section>
     <section id="card" class="form form-card">
       <div class="form__edit-div">
-        <button
-          type="button"
-          class="form__edit-content-button-close"
-          onclick="closePopup('card')"
-        ></button>
+        <button type="button" class="form__edit-content-button-close"></button>
         <h2 class="form__edit-title">Nova publicação</h2>
         <form name="formCard" class="form__edit-pro" id="formnewpb" novalidate>
           <input
@@ -153,11 +127,7 @@
       </div>
     </section>
     <div class="view" id="imageview">
-      <button
-        type="button"
-        class="view__button"
-        onclick="closePopup('imageview')"
-      ></button>
+      <button type="button" class="view__button"></button>
       <img src=" " alt="" class="view__image" />
       <h2 class="view__title"></h2>
     </div>

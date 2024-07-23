@@ -31,19 +31,15 @@ document
   .getElementById("formnewpb")
   .addEventListener("submit", handleFormNewPbSubmit);
 
-function loadForm(form) {
-  initialCards.forEach((element) => {
-    cardCreate(element);
-  });
-}
+initialCards.forEach((element) => {
+  cardCreate(element);
+});
 
 function handleFormNewPbSubmit(evt) {
   evt.preventDefault();
 
-  let nameInput, linkInput;
-
-  nameInput = document.getElementById("namec");
-  linkInput = document.getElementById("textc");
+  const nameInput = document.getElementById("namec");
+  const linkInput = document.getElementById("textc");
 
   const card = { name: nameInput.value, link: linkInput.value };
   cardCreate(card);
@@ -70,13 +66,11 @@ function closePopup(popupElement) {
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
 
-  let nameInput, jobInput, proName, proText;
+  const nameInput = document.getElementById("name");
+  const jobInput = document.getElementById("text");
 
-  nameInput = document.getElementById("name");
-  jobInput = document.getElementById("text");
-
-  proName = document.getElementById("proname");
-  proText = document.getElementById("protext");
+  const proName = document.getElementById("proname");
+  const proText = document.getElementById("protext");
 
   proName.innerHTML = nameInput.value;
   proText.innerHTML = jobInput.value;
@@ -91,23 +85,19 @@ function openPopup(popupElement) {
   formElement.style.display = "flex";
 
   if (popupElement == "pp") {
-    let nameInput, jobInput, proName, proText;
+    const nameInput = document.getElementById("name");
+    const jobInput = document.getElementById("text");
 
-    nameInput = document.getElementById("name");
-    jobInput = document.getElementById("text");
-
-    proName = document.getElementById("proname");
-    proText = document.getElementById("protext");
+    const proName = document.getElementById("proname");
+    const proText = document.getElementById("protext");
 
     nameInput.value = proName.innerHTML;
     jobInput.value = proText.innerHTML;
   }
 
   if (popupElement == "card") {
-    let nameCInput, jobCInput;
-
-    nameCInput = document.getElementById("namec");
-    jobCInput = document.getElementById("textc");
+    const nameCInput = document.getElementById("namec");
+    const jobCInput = document.getElementById("textc");
 
     nameCInput.value = "";
     jobCInput.value = "";
@@ -168,14 +158,29 @@ function remove(btn) {
 function cardCreate(card) {
   const template = document.querySelector("#div-cards").content;
   const divCard = template.cloneNode(true);
-  divCard.querySelector(".grid__card-image").src = card.link;
-  divCard.querySelector(".grid__card-image").alt = card.name;
+  const imageElement = divCard.querySelector(".grid__card-image");
+  console.log(imageElement);
+  console.log(divCard.children);
+  imageElement.src = card.link;
+  imageElement.alt = card.name;
   divCard.querySelector(".grid__card-legend").innerHTML = card.name;
   document.getElementById("sectionCards").prepend(divCard);
+  /*divCard
+    .querySelector(".grid__card-button-trash")
+    .addEventListener("click", function () {
+      remove();
+    });*/
+  imageElement.addEventListener("click", function () {
+    ViewImage(imageElement);
+  });
+  divCard
+    .querySelector(".grid__card-button-like")
+    .addEventListener("click", function () {
+      curtir();
+    });
 }
 
-function ViewImage(img) {
-  const image = img;
+function ViewImage(image) {
   const imageviewdiv = document.getElementById("imageview");
   document.getElementById("pagina").classList.add("page-visible");
   imageviewdiv.style.left =
@@ -205,4 +210,32 @@ document.addEventListener("keydown", function (event) {
     closePopup("card");
     closeImageView();
   }
+});
+
+document
+  .querySelector(".profile__button-form")
+  .addEventListener("click", function () {
+    openPopup("pp");
+  });
+
+document
+  .querySelector(".profile__button-fill")
+  .addEventListener("click", function () {
+    openPopup("card");
+  });
+
+document
+  .querySelector(".popup__edit-div-button-close")
+  .addEventListener("click", function () {
+    closePopup("pp");
+  });
+
+document
+  .querySelector(".form__edit-content-button-close")
+  .addEventListener("click", function () {
+    closePopup("card");
+  });
+
+document.querySelector(".view__button").addEventListener("click", function () {
+  closePopup("imageview");
 });
