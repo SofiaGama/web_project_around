@@ -3,8 +3,12 @@
   height: 50%;
   top: 25%;
   left: 25%;
-  display: none;
+  display: block;
   position: fixed;
+}
+
+.view-close {
+  display: none;
 }
 
 .view__image {
