@@ -233,6 +233,12 @@
     position: absolute;
   }
 
+  .form__submit-button-inactive {
+    left: 6px;
+    top: 245px;
+    max-width: 358px;
+  }
+
   .form__edit-title {
     left: 30px;
     width: 250px;
