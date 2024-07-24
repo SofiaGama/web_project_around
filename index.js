@@ -134,10 +134,7 @@ function handleClickOutsidePopup(event) {
 }
 
 function handleClickOutsideImageClose(event) {
-  const popup = document.getElementById("imageview");
-  if (popup.style.display === "block" && !popup.contains(event.target)) {
-    closeImageView();
-  }
+  closeImageView();
 }
 
 function curtir(btn) {
@@ -179,11 +176,6 @@ function cardCreate(card) {
 function ViewImage(image) {
   const imageviewdiv = document.querySelector(".view");
   document.getElementById("pagina").classList.add("page-visible");
-  /*imageviewdiv.style.left =
-    window.innerWidth / 2 - imageviewdiv.offsetWidth / 2;
-  imageviewdiv.style.top =
-    window.offsetHeight / 2 - imageviewdiv.offsetHeight / 2;
-  imageviewdiv.style.display = "block";*/
   imageviewdiv.classList.remove("view-close");
   imageviewdiv.querySelector(".view__image").src = image.src;
   imageviewdiv.querySelector(".view__title").innerHTML = image.alt;
