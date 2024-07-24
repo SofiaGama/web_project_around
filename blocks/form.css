@@ -233,19 +233,6 @@
     position: absolute;
   }
 
-  .form__submit-button-inactive {
-    border: none;
-    color: #fff;
-    font-family: inherit;
-    border-radius: 3px;
-    margin: 0px;
-    width: 250px;
-    top: 250px;
-    left: 60px;
-    display: flex;
-    position: absolute;
-  }
-
   .form__edit-title {
     left: 30px;
     width: 250px;
