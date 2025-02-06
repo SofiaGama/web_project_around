@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./pages/index.css" />
     <title>Around the World</title>
   </head>
-  <body class="body">
+  <body>
     <div id="pagina" class="page">
       <header class="header">
         <img
@@ -18,21 +18,23 @@
           class="header__logo"
         />
       </header>
-      <main>
+      <main class="main">
         <section class="profile">
           <div class="profile__content">
             <img
               src="./images/profileavatar.jpg"
-              alt="foto de perfil do usuário"
+              alt="foto de perfil"
               class="profile__avatar"
             />
             <div class="profile__middle">
               <h1 class="profile__name" id="proname">Jacques Cousteau</h1>
-              <button
-                type="button"
-                class="profile__button-form"
-                id="profile"
-              ></button>
+              <button type="button" class="profile__button-form2" id="profile">
+                <img
+                  src="./images/Edit Button.svg"
+                  class="profile__image"
+                  alt=""
+                />
+              </button>
               <p class="profile__text" id="protext">Explorador</p>
             </div>
           </div>
@@ -45,10 +47,124 @@
           </button>
         </section>
         <section class="grid" id="sectionCards"></section>
-        <template id="div-cards">
+        <!-- Criar novo cartão -->
+        <div class="popup popup_type_add-card">
+          <div class="popup__content">
+            <button class="popup__close-button popup__close-button_add-card">
+              <img
+                src="./images/Close_Icon.svg"
+                alt="Ícone de um x"
+                class="editor__close-image"
+              />
+            </button>
+            <h3 class="popup__title">Novo local</h3>
+            <form
+              class="form form_type_add-card"
+              name="add-card"
+              id="form-values"
+              novalidate
+            >
+              <input
+                type="text"
+                name="title"
+                class="form__input"
+                placeholder="Título"
+                id="titulo"
+                minlength="2"
+                maxlength="30"
+                required
+              />
+              <span class="form__error" id="titulo-error"></span>
+              <input
+                type="url"
+                name="link"
+                class="form__input"
+                placeholder="Link de imagem"
+                id="link"
+                required
+              />
+              <span class="form__error" id="link-error"></span>
+              <button
+                class="form__submit-button form__submit-button-inactive"
+              ></button>
+            </form>
+          </div>
+        </div>
+        <!-- Editar usuário -->
+        <!-- Botão para abrir o pop-up -->
+
+        <!-- Pop-up de edição de perfil -->
+        <div class="popup popup_type_edit-profile">
+          <div class="popup__content">
+            <button class="popup__close-button">
+              <img
+                src="./images/Close_Icon.svg"
+                alt="Ícone de um x"
+                class="editor__close-image"
+              />
+            </button>
+            <h2 class="popup__title">Editar Perfil</h2>
+            <form
+              class="form form_type_edit-profile"
+              id="edit-profile"
+              novalidate
+            >
+              <input
+                type="text"
+                id="name"
+                name="nome"
+                placeholder="Nome"
+                class="form__input"
+                minlength="2"
+                maxlength="40"
+                required
+              />
+              <span class="form__error" id="name-error"></span>
+              <input
+                type="text"
+                id="position"
+                name="cargo"
+                placeholder="Cargo"
+                class="form__input"
+                minlength="2"
+                maxlength="200"
+                required
+              />
+              <span class="form__error" id="position-error"></span>
+              <button
+                type="submit"
+                class="form__submit-button form__submit-button-inactive"
+              ></button>
+            </form>
+          </div>
+        </div>
+
+        <section class="popup popup_type_view-card">
+          <div class="popup__content">
+            <button
+              type="button"
+              class="popup__close-button popup__close-button_view-card"
+            >
+              <img
+                src="./images/Close_Icon.svg"
+                alt="Ícone de um x"
+                class="editor__close-image"
+              />
+            </button>
+            <img
+              class="popup__image"
+              src="#"
+              alt="Imagem do cartão"
+              height="120px"
+            />
+            <h2 class="popup__title"></h2>
+          </div>
+        </section>
+
+        <template id="card-template">
           <div class="grid__card">
             <button type="button" class="grid__card-button-trash"></button>
-            <img src=" " alt="" class="grid__card-image" />
+            <img src="" alt="" class="grid__card-image" />
             <div class="grid__card-content">
               <p class="grid__card-legend"></p>
               <button type="button" class="grid__card-button-like"></button>
@@ -60,78 +176,9 @@
         <p>&copy; 2024 Around The World</p>
       </footer>
     </div>
-    <section id="pp" class="popup popup-empty">
-      <div class="popup__edit-div">
-        <button type="button" class="popup__edit-div-button-close"></button>
-        <h2 class="popup__edit-title">Editar Perfil</h2>
-        <form name="formProfile" id="ppep" class="popup__edit-pro" novalidate>
-          <input
-            type="text"
-            name="nome"
-            class="popup__input popup__input-type-name"
-            id="name"
-            placeholder="Nome"
-            value="Jacques Cousteau"
-            minlength="2"
-            maxlength="40"
-            required
-          />
-          <span class="popup__input-type-error"></span>
-          <input
-            type="text"
-            name="texto"
-            class="popup__input popup__input-type-text"
-            id="text"
-            placeholder="Sobre mim"
-            value="Explorador"
-            required
-            minlength="2"
-            maxlength="200"
-          />
-          <span class="popup__input-type-error-text"></span>
-          <button type="submit" class="popup__submit-button"></button>
-        </form>
-      </div>
-    </section>
-    <section id="card" class="form form-card">
-      <div class="form__edit-div">
-        <button type="button" class="form__edit-content-button-close"></button>
-        <h2 class="form__edit-title">Nova publicação</h2>
-        <form name="formCard" class="form__edit-pro" id="formnewpb" novalidate>
-          <input
-            type="text"
-            name="nome"
-            class="form__input form__input-type-name"
-            id="namec"
-            placeholder="Legenda"
-            required
-            minlength="2"
-            maxlength="30"
-          />
-          <span class="form__input-type-error"></span>
-          <input
-            type="url"
-            name="autor"
-            class="form__input form__input-type-author"
-            id="textc"
-            placeholder="Link imagem"
-            required
-          />
-          <span class="form__input-type-error-author"></span>
-          <button
-            type="submit"
-            class="form__submit-button-inactive"
-            disabled
-          ></button>
-        </form>
-      </div>
-    </section>
-    <div class="view view-close" id="imageview">
-      <button type="button" class="view__button"></button>
-      <img src=" " alt="" class="view__image" />
-      <h2 class="view__title"></h2>
-    </div>
-    <script src="./index.js"></script>
-    <script src="./validate.js"></script>
+    <script type="module" src="./scripts/index.js"></script>
+    <script type="module" src="./scripts/card.js"></script>
+    <script type="module" src="./scripts/utils.js"></script>
+    <script type="module" src="./scripts/FormValidator.js"></script>
   </body>
 </html>

@@ -2,8 +2,7 @@
   display: flex;
   justify-content: space-between;
   max-width: 880px;
-  margin-top: 20px;
-  margin-left: 200px;
+  margin: 0 auto;
 }
 
 .profile__content {
@@ -25,6 +24,11 @@
   align-items: center;
   text-align: center;
   flex-wrap: wrap;
+}
+
+.profile__image {
+  padding-top: 20px;
+  cursor: pointer;
 }
 
 .profile__name {
@@ -57,6 +61,12 @@
 .profile__button-form:hover {
   cursor: pointer;
   opacity: 0.6;
+}
+
+.profile__button-form2 {
+  background-color: black;
+  border: none;
+  color: white;
 }
 
 .profile__text {
@@ -95,15 +105,8 @@
   opacity: 0.6;
 }
 
-@media (max-width: 1060px) {
+@media (max-width: 1024px) {
   .profile {
-    margin-left: 0px;
-  }
-}
-
-@media (max-width: 1045px) {
-  .profile {
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -120,12 +123,10 @@
   }
 
   .profile__middle {
-    display: flex;
     max-width: 400px;
     width: 100%;
     height: 50px;
     justify-content: center;
-    align-items: center;
     gap: 10px;
     margin: 0;
   }
@@ -137,8 +138,6 @@
   }
 
   .profile__button-form {
-    width: 24px;
-    height: 24px;
     margin-left: 10px;
   }
 
@@ -148,12 +147,17 @@
   }
 
   .profile__button-fill {
-    background-color: transparent;
-    cursor: pointer;
-    width: 100%;
-    max-width: 300px;
-    max-height: 50px;
-    height: 100%;
-    border: 2px solid #fff;
+    max-width: 282px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 544px) {
+  .profile__name {
+    font-size: 23px;
+  }
+
+  .profile__text {
+    font-size: 16px;
   }
 }

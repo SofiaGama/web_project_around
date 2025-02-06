@@ -1,10 +1,10 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
   max-width: 880px;
   width: 100%;
-  margin: auto;
+  height: 100%;
+  margin: 0 auto;
   row-gap: 40px;
   column-gap: 21px;
   margin-top: 50px;
@@ -13,8 +13,11 @@
 .grid__card {
   background-color: #fff;
   max-width: 282px;
-  max-height: 361px;
+  min-height: 361px;
+  height: 100%;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .grid__card-image {
@@ -98,39 +101,19 @@
   opacity: 0.5;
 }
 
-@media (max-width: 1046px) {
+@media (max-width: 1024px) {
   .grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    max-width: 600px;
+    grid-template-columns: repeat(2, 282px);
     row-gap: 20px;
     column-gap: 17px;
     margin: auto;
     margin-top: 50px;
-  }
-}
-
-@media (max-width: 600px) {
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    margin: auto;
-    margin-top: 50px;
-    margin-left: 42px;
     justify-content: center;
   }
-
-  .grid__card-image {
-    max-width: 282px;
-    width: 100%;
-    max-height: 282px;
-    height: 100%;
-  }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 640px) {
   .grid {
-    margin-left: 19px;
+    grid-template-columns: repeat(1, 282px);
   }
 }
