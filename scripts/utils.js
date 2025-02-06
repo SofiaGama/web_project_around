@@ -26,9 +26,12 @@ function closePopup(popup) {
 }
 
 openAddCardButton.addEventListener("click", () => openPopup(popupAddCard));
-openEditProfileButton.addEventListener("click", () =>
-  openPopup(popupEditProfile)
-);
+openEditProfileButton.addEventListener("click", () => {
+  inputName.value = profileName.textContent;
+  inputJob.value = profileText.textContent;
+
+  openPopup(popupEditProfile);
+});
 
 closeButtons.forEach((button) => {
   button.addEventListener("click", () => {
