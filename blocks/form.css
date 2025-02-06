@@ -31,7 +31,7 @@
 }
 
 .form__submit-button {
-  background-image: url("../images/Submit\ Button.svg");
+  background-image: url("../images/SubmitButton.svg");
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -41,7 +41,7 @@
 }
 
 .form__submit-button-inactive {
-  background-image: url("../images/Submit\ Button\ disabled\ -\ cópia.jpg");
+  background-image: url("../images/SubmitButtondisabled-cópia.jpg");
 }
 
 .form-card {
@@ -120,7 +120,7 @@
   }
 
   .form__submit-button {
-    background-image: url("../images/Submit\ Button320px.svg");
+    background-image: url("../images/SubmitButton320px.svg");
     font-family: inherit;
     border-radius: 5px;
     margin: 155px 8px;
@@ -131,7 +131,7 @@
   }
 
   .form__submit-button-inactive {
-    background-image: url("../images/Submit\ Button\ disabled.jpg");
+    background-image: url("../images/SubmitButtondisabled.jpg");
     width: 226px;
     height: 32px;
   }
