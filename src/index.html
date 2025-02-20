@@ -96,15 +96,11 @@
               <img src="./images/Close_Icon.svg" alt="Ícone de um x" />
             </button>
             <h2 class="popup__title">Editar Perfil</h2>
-            <form
-              class="form form_type_edit-profile"
-              id="edit-profile"
-              novalidate
-            >
+            <form class="form form_type_edit-profile" id="editp" novalidate>
               <input
                 type="text"
                 id="name"
-                name="nome"
+                name="name"
                 placeholder="Nome"
                 class="form__input"
                 minlength="2"
@@ -115,7 +111,7 @@
               <input
                 type="text"
                 id="position"
-                name="cargo"
+                name="about"
                 placeholder="Cargo"
                 class="form__input"
                 minlength="2"
@@ -159,9 +155,6 @@
         <p>&copy; 2024 Around The World</p>
       </footer>
     </div>
-    <script type="module" src="./scripts/index.js"></script>
-    <script type="module" src="./scripts/card.js"></script>
-    <script type="module" src="./scripts/utils.js"></script>
-    <script type="module" src="./scripts/FormValidator.js"></script>
+    <script type="module" src="./index.js"></script>
   </body>
 </html>
