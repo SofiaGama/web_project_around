@@ -55,10 +55,6 @@ const section = new Section(
 );
 section.renderItems();
 
-// document.addEventListener("DOMContentLoaded", () => {
-//   loadCards(initialCards);
-// });
-
 function loadCards({ name, link }) {
   const card = new Card(name, link, "#card-template", {
     hander: (name, link) => popupViewImage.open(name, link),
@@ -70,9 +66,9 @@ const config = {
   form: ".form",
   input: ".form__input",
   submitButton: ".form__submit-button",
-  buttonDisabledClass: ".form__submit-button-inactive",
-  errorClass: ".form__error-invalid",
-  inputErrorClass: ".form__input-invalid",
+  buttonDisabledClass: "form__submit-button-inactive",
+  errorClass: "form__error-invalid",
+  inputErrorClass: "form__input-invalid",
 };
 
 const formValidatorAddCard = new FormValidator(config, "form-values");

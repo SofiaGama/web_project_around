@@ -12,11 +12,26 @@ export default class Popup {
   close() {
     document.removeEventListener("keypress", this._handleEscClose);
     this._popup.classList.remove("popup_opened");
+    console.log(this._handleEscClose);
   }
 
   _handleEscClose(evt) {
-    if (evt.key == "Escape") {
+    // document.addEventListener(
+    //   "keydown",
+    //   (evt) => {
+    //     if (evt.key === "Escape") {
+    //       evt.preventDefault();
+    //       this.close();
+    //     }
+    //   },
+    //   { capture: true }
+    // );
+    console.log(evt);
+    if (evt.code === "Escape") {
       this.close();
+      document.addEventListener("keydown", (e) =>
+        console.log(`Tecla pressionada: ${e.key}`)
+      );
     }
   }
 
