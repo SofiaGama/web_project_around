@@ -26,10 +26,10 @@ const popupProfile = new PopupWithForms(
 );
 popupProfile.setEventListeners();
 
-const createNewCard = (values) => {
-  const card = new Card(values.title, values.link, "#card-template", () =>
-    popupViewImage.open(values.link, values.title)
-  );
+const createNewCard = ({ name, link }) => {
+  const card = new Card(name, link, "#card-template", {
+    hander: (name, link) => popupViewImage.open(name, link),
+  });
   const cardElement = card.generateCard();
 
   section.addItems(cardElement);
