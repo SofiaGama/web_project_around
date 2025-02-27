@@ -40,6 +40,10 @@
   margin: 10px 15px -10px;
 }
 
+.form__submit-button-avatar {
+  margin: 48px 16px;
+}
+
 .form__submit-button-inactive {
   background-image: url("../images/SubmitButtondisabled-cópia.jpg");
 }

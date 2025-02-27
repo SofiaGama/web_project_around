@@ -1,3 +1,5 @@
+// import Api from "./Api";
+
 export default class Popup {
   constructor(selector) {
     this._popup = document.querySelector(selector);
@@ -12,6 +14,9 @@ export default class Popup {
   close() {
     document.removeEventListener("keypress", this._handleEscClose);
     this._popup.classList.remove("popup_opened");
+    {
+      api.deleteCard();
+    }
   }
 
   _handleEscClose(evt) {

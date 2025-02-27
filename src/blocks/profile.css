@@ -9,6 +9,33 @@
   display: flex;
 }
 
+.profile__avatar-edit-button {
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  top: 114px;
+  border-radius: 65%;
+  width: 100%;
+  max-width: 120px;
+  max-height: 120px;
+  height: 100%;
+}
+
+.profile__avatar-edit-button:hover {
+  background-image: url(../images/profileVector.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.profile__edit-title {
+  text-align: start;
+  margin: 34px 36px 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
 .profile__avatar {
   width: 120px;
   height: 120px;
@@ -152,6 +179,11 @@
   }
 }
 
+@media (max-width: 768px) {
+  .profile__avatar-edit-button {
+    top: 96px;
+  }
+}
 @media (max-width: 544px) {
   .profile__name {
     font-size: 23px;

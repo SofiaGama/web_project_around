@@ -1,11 +1,13 @@
 //@ts-nocheck
-import UserInfo from "../components/UserInfo.js";
+// import UserInfo from "../components/UserInfo.js";
 import Card from "../components/Card.js";
 import { popupViewImage } from "../index.js";
 
+const popupEditAvatar = document.querySelector(".popup_type_edit-avatar");
 const popupAddCard = document.querySelector(".popup_type_add-card");
 const popupEditProfile = document.querySelector(".popup_type_edit-profile");
 const popupViewCard = document.querySelector(".popup_type_view-card");
+const openChangeAvatar = document.querySelector(".profile__avatar-edit-button");
 const openAddCardButton = document.querySelector(".profile__button-fill");
 const openEditProfileButton = document.querySelector("#profile");
 const closeButtons = document.querySelectorAll(".popup__close-button");
@@ -48,10 +50,10 @@ function openPopup(popup) {
 }
 
 function closePopup(popup) {
-  console.log(popup);
   popup.classList.remove("popup_opened");
 }
 
+openChangeAvatar.addEventListener("click", () => openPopup(popupEditAvatar));
 openAddCardButton.addEventListener("click", () => openPopup(popupAddCard));
 openEditProfileButton.addEventListener("click", () => {
   inputName.value = profileName.textContent;
@@ -66,12 +68,6 @@ closeButtons.forEach((button) => {
     closePopup(popup);
   });
 });
-
-const userInfo = new UserInfo({ name: "#proname", about: "#protext" });
-
-export const editUserInfo = (values) => {
-  userInfo.setUserInfo(values.name, values.about);
-};
 
 document.addEventListener("click", (e) => {
   if (e.target.classList.contains(".popup_opened")) {

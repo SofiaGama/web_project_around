@@ -26,6 +26,10 @@
   position: relative;
 }
 
+.popup__content-avatar {
+  max-height: 272px;
+}
+
 .popup__close-button {
   border: none;
   background-color: transparent;
