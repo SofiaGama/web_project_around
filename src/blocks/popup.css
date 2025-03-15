@@ -30,6 +30,11 @@
   max-height: 272px;
 }
 
+.popup__content-confirmation {
+  max-height: 181px;
+  max-width: 430px;
+}
+
 .popup__close-button {
   border: none;
   background-color: transparent;
@@ -49,6 +54,10 @@
   margin: 34px 36px 20px;
   font-size: 24px;
   font-weight: bold;
+}
+
+.popup__title-viewer {
+  color: white;
 }
 
 .popup__image {

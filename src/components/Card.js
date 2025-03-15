@@ -1,10 +1,23 @@
 export default class Card {
-  constructor(name, link, cardTemplate, { hander }, handleCardClick) {
+  constructor(
+    { name, link, _id, isLiked, owner },
+    cardTemplate,
+    { hander },
+    likeCard,
+    dislikeCard,
+    popupConfirmation,
+    cardDelete
+  ) {
     this._name = name;
     this._link = link;
+    this._id = _id;
+    this._isLiked = isLiked;
+    this._likeCard = likeCard;
+    this._dislikeCard = dislikeCard;
     this._cardTemplate = document.querySelector(cardTemplate);
-    this._handleCardClick = handleCardClick;
     this._cardOpenImage = hander;
+    this._popupConfirmation = popupConfirmation;
+    this._cardDelete = cardDelete;
   }
 
   _getTemplate() {
@@ -15,31 +28,43 @@ export default class Card {
     return cardElement;
   }
 
-  toggleLike() {
-    this._element
-      .querySelector(".grid__card-button-like")
-      .classList.toggle("grid__card-button-like-active");
-  }
-
   _seteventListener() {
     this._buttonLike.addEventListener("click", () => {
       this._handleCardLike();
     });
-    this._buttonDelete.addEventListener("click", () => {
-      this._handleCardDelete();
+    this._buttonDelete.addEventListener("click", (evt) => {
+      this._handleCardDelete(evt);
     });
     this._cardImage.addEventListener("click", () => {
       this._cardOpenImage(this._name, this._link);
     });
   }
 
-  _handleCardDelete() {
-    this._element.remove();
-    this._element = null;
+  _handleCardLike() {
+    if (this._isLiked) {
+      this._dislikeCard(this._id, (res) => {
+        this._isLiked = res.isLiked;
+        this._buttonLike.classList.toggle("grid__card-button-like-active");
+      });
+    } else {
+      this._likeCard(this._id, (res) => {
+        this._isLiked = res.isLiked;
+        this._buttonLike.classList.toggle("grid__card-button-like-active");
+      });
+    }
   }
 
-  _handleCardLike() {
-    this._buttonLike.classList.toggle("grid__card-button-like-active");
+  _isCardLiked() {
+    if (this._isLiked) {
+      this._buttonLike.classList.add("grid__card-button-like-active");
+    }
+  }
+
+  _handleCardDelete(evt) {
+    this._popupConfirmation.open(() => {
+      this._cardDelete(this._id);
+      evt.target.parentElement.remove();
+    });
   }
 
   generateCard() {
@@ -50,7 +75,7 @@ export default class Card {
     this._buttonDelete = this._element.querySelector(
       ".grid__card-button-trash"
     );
-
+    this._isCardLiked();
     this._cardImage.setAttribute("src", this._link);
     this._cardImage.setAttribute("alt", this._name);
     this._cardText.textContent = this._name;

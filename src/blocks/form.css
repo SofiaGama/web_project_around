@@ -40,6 +40,10 @@
   margin: 10px 15px -10px;
 }
 
+.form__submit-button:hover {
+  opacity: 60%;
+}
+
 .form__submit-button-avatar {
   margin: 48px 16px;
 }
@@ -104,6 +108,16 @@
   top: 235px;
   left: 5px;
   visibility: hidden;
+}
+
+.form__submit-button-confirmation {
+  background-image: url(../images/form__submit-button-confirmation.svg);
+  margin: 20px 30px;
+  width: 358px;
+}
+
+.form__submit-button-confirmation:hover {
+  opacity: 60%;
 }
 
 @media (max-width: 1024px) {

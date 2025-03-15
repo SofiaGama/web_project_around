@@ -1,5 +1,3 @@
-// import Api from "./Api";
-
 export default class Popup {
   constructor(selector) {
     this._popup = document.querySelector(selector);
@@ -14,9 +12,6 @@ export default class Popup {
   close() {
     document.removeEventListener("keypress", this._handleEscClose);
     this._popup.classList.remove("popup_opened");
-    {
-      api.deleteCard();
-    }
   }
 
   _handleEscClose(evt) {
@@ -30,8 +25,8 @@ export default class Popup {
   }
 
   setEventListeners() {
-    const buttonClose = document.querySelector(".popup__close-button");
-    buttonClose.addEventListener("click", this.close);
+    const buttonClose = this._popup.querySelector(".popup__close-button");
+    buttonClose.addEventListener("click", () => this.close());
 
     this._popup.addEventListener("click", (e) => {
       if (e.target.classList.contains("popup_opened")) {

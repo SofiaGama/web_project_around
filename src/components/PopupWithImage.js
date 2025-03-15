@@ -16,18 +16,11 @@ export default class PopupWithImage extends Popup {
   }
 
   close() {
+    super.close();
     document.removeEventListener("keypress", this._handleEscClose);
-    this._popup.classList.remove("popup_opened");
   }
 
   setEventListeners() {
-    const buttonClose = document.querySelector(".popup__close-button");
-    buttonClose.addEventListener("click", this.close);
-
-    this._popup.addEventListener("click", (e) => {
-      if (e.target.classList.contains("popup_opened")) {
-        this.close();
-      }
-    });
+    super.setEventListeners();
   }
 }
