@@ -11,7 +11,6 @@ export default class PopupWithConfirmation extends Popup {
 
   open(removeCard) {
     super.open();
-    // this._cardId = cardId;
     this._removeCard = removeCard;
     this._buttonConfirm.addEventListener("click", this._removeCard);
   }
